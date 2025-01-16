@@ -6,7 +6,10 @@ import { ScrollTrigger } from 'gsap/all';
 gsap.registerPlugin(ScrollTrigger)
 const Page3 = () => {
     useGSAP(()=>{
-        gsap.to('.page3 header h1',{
+      const t1=gsap.timeline(
+
+      )
+        t1.to('.page3 header h1',{
             y:100,
             duration:1,
             scrollTrigger:{
@@ -21,14 +24,14 @@ const Page3 = () => {
             }
             
         }),
-        gsap.to('.page3 img',{
+        t1.to('.page3 img',{
             scale:1.5,
             duration:1,
             scrollTrigger:{
                 trigger:'.page3',
                 start:'top -2%',
                 end:'top -10%',
-                scrub:2,
+                scrub:true,
                 // markers:true,
                 
                 // pin:true

@@ -9,12 +9,14 @@ import Page4 from './Pages/Page4';
 import Questions from './Pages/Questions';
 import Experience from './Pages/Experience';
 import GoogleAi from './Pages/GoogleAi';
+import AnimatedText from './Components/AnimatedText';
 
 
 
 function App() {
   return (
     <div className="App">
+      {/* <AnimatedText/> */}
       <Page1/>
       <Page2/>
       <Page3/>

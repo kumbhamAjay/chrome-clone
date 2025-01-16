@@ -6,74 +6,87 @@ import logo from "../assets/chrome-logo-m100.svg";
 import video1 from "../assets/chrome-video.webm";
 import { useGSAP } from "@gsap/react";
 import { MdOutlineFileDownload, MdSpeed } from "react-icons/md";
+import Carousel from "../Components/Carousel";
+import Slider from "../Components/Slider";
+import AnimatedText from "../Components/AnimatedText";
 gsap.registerPlugin(ScrollTrigger);
 const Page1 = () => {
   const text = ["fast", "safe", "yours"];
   const color = ["green", "blue", "red"];
   const [currentTextIndex, setCurrentTextIndex] = useState(0);
   let t1=gsap.timeline()
-  useGSAP(() => {
-    gsap.to('.video',{
-        scaleX:1.3,
+  // useGSAP(() => {
+  //   gsap.to('.video',{
+  //       border:'1px solid',
         
-        duration:1,
-        scrollTrigger:{
-            trigger:'.video',
-            pin:true,
-            start:'top 75%',
-            end:'top 55%',
-            scrub:2,
-            // markers:true
-        }
-    }),
-    gsap.fromTo('.heading h1',{
-      opacity:'0'
-    },
-      {
-      top:'',
-      opacity:'1',
-      scrollTrigger:{
-        trigger:'.video',
-        pin:true,
-        start:'top 75%',
-        end:'top 55%',
-        scrub:1,
-        // markers:true
-    }
+  //       // duration:1,
+  //       scrollTrigger:{
+  //           trigger:'.hr',
+  //           pin:true,
+  //           start:'top 25%',
+  //           end:'top 5%',
+  //           scrub:true,
+  //           // markers:true
+  //       }
+  //   }),
+  //   gsap.from('.heading h1',
+  //     {
+  //     y:"400px",
+  //     opacity:'1',
+  //     scrollTrigger:{
+  //       trigger:'.hr',
+  //       // pin:true,
+  //       start:'top 70%',
+  //       end:'top 20%',
+  //       scrub:1,
+  //       // markers:true
+  //   }
 
-    }),
-    gsap.to('video',{
-      // height:'400px',
-      marginTop:'100px',
-      x:"-10%",
-      y:"30%",
+  //   }),
+  //   gsap.to('video',{
+  //     // height:'400px',
+  //     marginTop:'100px',
+  //     x:"-10%",
+  //     y:"30%",
      
-      margin:'auto',
-      scrollTrigger:{
-        trigger:'.cont',
-        pin:true,
-        start:'top 10%',
-        end:'top -10%',
-        // markers:true,
-        scrub:2
-      }
+  //     margin:'auto',
+  //     scrollTrigger:{
+  //       trigger:'.cont',
+  //       // pin:true,
+  //       start:'top 10%',
+  //       end:'top -10%',
+  //       // markers:true,
+  //       scrub:2
+  //     }
 
-    }),
-    gsap.to('.video',{
-      height:'400px',
-      border:'1px solid grey',
-      scrollTrigger:{
-        trigger:'.cont',
-        // pin:true,
-        start:'top 20%',
-        end:'top -15%',
-        // markers:true,
-        scrub:2
-      }
+  //   }),
+  //   // gsap.to('.video',{
+  //   //   height:'400px',
+  //   //   border:'1px solid grey',
+  //   //   scrollTrigger:{
+  //   //     trigger:'.cont',
+  //   //     // pin:true,
+  //   //     start:'top 20%',
+  //   //     end:'top -15%',
+  //   //     // markers:true,
+  //   //     scrub:2
+  //   //   }
 
-    })
+  //   // }),
+  //   gsap.to('.video',{
+  //     position:'sticky',
+  //     top:'70vh',
+  //     scale:'1.3',
+  //     scrollTrigger:{
+  //       trigger:'.hr',
+  //       start:'top 70%',
+  //       end:'top 20%',
+  //       markers:true,
+  //       scrub:true
+  //     }
+  //   })
     
-  });
+  // });
 
   useEffect(() => {
     const interval = setInterval(() => {
@@ -109,7 +122,8 @@ const Page1 = () => {
         <p style={{ fontSize: "80px" }}>
           The Browser
           <br /> built to be{" "}
-          <span
+          <AnimatedText/>
+          {/* <span
             className="animated-text"
             style={{
               height: "50px",
@@ -126,7 +140,7 @@ const Page1 = () => {
             }}
           >
             {text[currentTextIndex]}
-          </span>
+          </span> */}
         </p>
         <button
           style={{
@@ -146,15 +160,15 @@ const Page1 = () => {
         <br />
 
         <div style={{ display: "flex" }}>
-          <input type="checkbox" />
-          <span htmlFor="">
+          <input type="checkbox" style={{margin:"0 10px 20px 0"}}/>
+          <p htmlFor="">
             Help make Google Chrome better by automatically sending usage
             statistics and crash
             <br /> reports to Google.{" "}
             <a href="" style={{ textDecoration: "none" }}>
               Learn more
             </a>
-          </span>
+          </p>
           <br />
         </div>
         <p style={{ marginTop: "30px", fontSize: "15px" }}>
@@ -169,24 +183,28 @@ const Page1 = () => {
           </a>{" "}
         </p>
       </div>
+      <Slider/>
+      {/* <hr style={{margin:'20px 0'}} className="hr"/>
       <div className="heading"
         style={{
-          position: "relative",
-          top: "100px",
+          position: "absolute",
+          top: "500px",
           width: "100%",
-        //   border: "2px solid",
-          zIndex: "21",
+          marginTop:'20px',
+          // border: "2px solid",
+          zIndex: "-1",
         }}
       >
         <h1
-          style={{ position: "absolute",left:'25%',top:'100px',fontSize:'54px',fontWeight:'bold' }}
+          style={{fontSize:'54px',fontWeight:'bold',textAlign:'center',zIndex:-1}}
         >
           The <span style={{backgroundColor:'#82c493',borderRadius:'30px',padding:'10px',color:'green'}}><MdSpeed size={45} />fast</span> way to do things online
         </h1>
-      </div>
-      <div className="cont" style={{width:"100%",height:"100vh",}}>
+      </div> */}
+      {/* <div className="cont" style={{width:"100%",height:"100vh",}}>
+        {/* <Carousel/> */}
       
-      <div className="video" style={styles.video}>
+      {/* <div className="video" style={styles.video}>
         <div style={{position:'absolute',left:'10%',right:'10%',top:'5%',display:'flex'}}>
             <h1>Prioritise performance</h1>
             <p>Chrome is built for performance. Optimise your experience    &nbsp; with features like Energy Saver and Memory Saver.</p>
@@ -200,8 +218,8 @@ const Page1 = () => {
         >
           <source src={video1} />
         </video>
-      </div>
-      </div>
+      </div> */}
+      {/* </div>  */}
     </div>
   );
 };
@@ -218,7 +236,7 @@ const styles = {
     width: "800px",
     display: "flex",
     flexDirection: "column",
-    margin: "auto",
+    margin: " 0 auto 50px",
     overflow: "hidden",
     position:'relative',
     justifyContent: "center",
