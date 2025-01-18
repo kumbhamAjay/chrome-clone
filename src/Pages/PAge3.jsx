@@ -69,7 +69,7 @@ const styles = {
     fontFamily: 'Arial, sans-serif',
     textAlign: 'center',
     padding: '0 20px 20px 20px',
-    // height:'100vh',
+    height:'100vh',
     // border:'1px solid red'
   },
   

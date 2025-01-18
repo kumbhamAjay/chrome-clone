@@ -10,11 +10,15 @@ import Questions from './Pages/Questions';
 import Experience from './Pages/Experience';
 import GoogleAi from './Pages/GoogleAi';
 import AnimatedText from './Components/AnimatedText';
+import Circles from './Components/Circles';
 
 
 
 function App() {
   return (
+    // <>
+    // <Circles/>
+    // </>
     <div className="App">
       {/* <AnimatedText/> */}
       <Page1/>
@@ -27,7 +31,7 @@ function App() {
       <Footer/>
      
     </div>
-  );
+  )
 }
 
 export default App;
