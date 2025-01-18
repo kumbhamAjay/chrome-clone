@@ -122,8 +122,8 @@ const Page1 = () => {
         <p style={{ fontSize: "80px" }}>
           The Browser
           <br /> built to be{" "}
-          <AnimatedText/>
-          {/* <span
+          {/* <AnimatedText/> */}
+          <span
             className="animated-text"
             style={{
               height: "50px",
@@ -140,7 +140,7 @@ const Page1 = () => {
             }}
           >
             {text[currentTextIndex]}
-          </span> */}
+          </span>
         </p>
         <button
           style={{
